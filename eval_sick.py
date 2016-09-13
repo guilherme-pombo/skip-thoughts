@@ -70,7 +70,7 @@ def prepare_model(ninputs=9600, nclass=5):
     Set up and compile the model architecture (Logistic regression)
     """
     lrmodel = Sequential()
-    lrmodel.add(Dense(ninputs, nclass))
+    lrmodel.add(Dense(nclass, input_dim=ninputs))
     lrmodel.add(Activation('softmax'))
     lrmodel.compile(loss='categorical_crossentropy', optimizer='adam')
     return lrmodel
